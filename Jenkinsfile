@@ -4,6 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Build Demo App'
+        bat 'call build.bat'
       }
     }
 
@@ -12,12 +13,14 @@ pipeline {
         stage('Linux Tests') {
           steps {
             echo 'Run Linux tests'
+            bat 'call test1.bat'
           }
         }
 
         stage('Window Tests') {
           steps {
             echo 'Run Windows Tests'
+            bat 'call test2.bat'
           }
         }
 
